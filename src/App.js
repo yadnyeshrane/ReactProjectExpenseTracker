@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Header from './components/Header'
+import Balance from './components/Balance';
+import Income from './components/IncomeExpense';
+import Transactionlist from './components/Transactionlist'
+import './App.css'
+import AddTranscation from './components/AddTranscation'
+import {GLoabalProvider}from './context/GlobalState'
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GLoabalProvider>
+     <Header></Header>
+     <div className="container">
+<Balance></Balance>
+<Income></Income>
+<Transactionlist></Transactionlist>
+<AddTranscation></AddTranscation>
+     </div>
+     </GLoabalProvider>
   );
 }
 
